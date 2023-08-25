@@ -17,6 +17,7 @@
 		F6EAC92F2A988D3500223931 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAC92E2A988D3500223931 /* DetailsViewController.swift */; };
 		F6EAC9312A988D5B00223931 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAC9302A988D5B00223931 /* DetailsViewModel.swift */; };
 		F6EAC9332A988D7800223931 /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAC9322A988D7800223931 /* DetailsModel.swift */; };
+		F6EAC9352A98AAF600223931 /* AdvertisementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAC9342A98AAF600223931 /* AdvertisementCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F6EAC92E2A988D3500223931 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F6EAC9302A988D5B00223931 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		F6EAC9322A988D7800223931 /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
+		F6EAC9342A98AAF600223931 /* AdvertisementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				F6EAC92B2A988AC900223931 /* Application */,
 				F6EAC9272A988A9400223931 /* Modules */,
 				F6EAC92C2A988B2400223931 /* Resources */,
+				F6EAC9342A98AAF600223931 /* AdvertisementCell.swift */,
 			);
 			path = PracticalTestTask;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				F6EAC9132A98655300223931 /* SceneDelegate.swift in Sources */,
 				F6EAC9332A988D7800223931 /* DetailsModel.swift in Sources */,
 				F6EAC9312A988D5B00223931 /* DetailsViewModel.swift in Sources */,
+				F6EAC9352A98AAF600223931 /* AdvertisementCell.swift in Sources */,
 				F6EAC9262A9889D700223931 /* AdvertisementModel.swift in Sources */,
 				F6EAC92F2A988D3500223931 /* DetailsViewController.swift in Sources */,
 			);
