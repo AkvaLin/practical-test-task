@@ -11,14 +11,8 @@ class AdvertisementCell: UICollectionViewCell {
     
     static let reuseID = String(describing: AdvertisementCell.self)
     
-    private let spinner: UIActivityIndicatorView = {
-        let spinner = UIActivityIndicatorView()
-        spinner.hidesWhenStopped = true
-        spinner.startAnimating()
-        return spinner
-    }()
-    private let imageView: UIImageView = {
-        let view = UIImageView()
+    private let imageView: CustomImageView = {
+        let view = CustomImageView()
         view.contentMode = .scaleAspectFit
         view.clipsToBounds = true
         view.layer.cornerRadius = 16
@@ -50,7 +44,6 @@ class AdvertisementCell: UICollectionViewCell {
         super.init(frame: frame)
         contentView.clipsToBounds = true
         contentView.addSubview(imageView)
-        contentView.addSubview(spinner)
         contentView.addSubview(titleLabel)
         contentView.addSubview(priceLabel)
         contentView.addSubview(locationLabel)
@@ -68,30 +61,26 @@ class AdvertisementCell: UICollectionViewCell {
                                  y: 0,
                                  width: contentView.frame.size.width - 10,
                                  height: contentView.frame.size.width - 10)
-        spinner.frame = CGRect(x: 5,
-                               y: 0,
-                               width: contentView.frame.size.width - 10,
-                               height: contentView.frame.size.width - 10)
         titleLabel.frame = CGRect(x: 5,
                                   y: contentView.frame.size.height / 100 * 65,
                                   width: contentView.frame.size.width - 10,
                                   height: contentView.frame.size.height / 100 * 16)
         priceLabel.frame = CGRect(x: 5,
-                                  y: contentView.frame.size.height / 100 * 82.5,
+                                  y: contentView.frame.size.height / 100 * 81.5,
                                   width: contentView.frame.size.width - 10,
                                   height: contentView.frame.size.height / 100 * 8)
         locationLabel.frame = CGRect(x: 5,
-                                     y: contentView.frame.size.height / 100 * 92,
+                                     y: contentView.frame.size.height / 100 * 90,
                                      width: contentView.frame.size.width - 10,
-                                     height: contentView.frame.size.height / 100 * 4)
+                                     height: contentView.frame.size.height / 100 * 5)
         createdDateLabel.frame = CGRect(x: 5,
-                                        y: contentView.frame.size.height / 100 * 96,
+                                        y: contentView.frame.size.height / 100 * 95,
                                         width: contentView.frame.size.width - 10,
-                                        height: contentView.frame.size.height / 100 * 4)
+                                        height: contentView.frame.size.height / 100 * 5)
     }
     
-    public func configure(imageData: Data, title: String, price: String, location: String, date: String) {
-        imageView.image = UIImage(data: imageData)
+    public func configure(imageURL: URL?, title: String, price: String, location: String, date: String) {
+        imageView.loadImage(from: imageURL)
         titleLabel.text = title
         priceLabel.text = price
         locationLabel.text = location

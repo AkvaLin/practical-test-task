@@ -18,6 +18,8 @@
 		F6EAC9312A988D5B00223931 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAC9302A988D5B00223931 /* DetailsViewModel.swift */; };
 		F6EAC9332A988D7800223931 /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAC9322A988D7800223931 /* DetailsModel.swift */; };
 		F6EAC9352A98AAF600223931 /* AdvertisementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAC9342A98AAF600223931 /* AdvertisementCell.swift */; };
+		F6EAC9372A99DF0600223931 /* AdvertismentCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAC9362A99DF0600223931 /* AdvertismentCellModel.swift */; };
+		F6EAC9392A99F12A00223931 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAC9382A99F12A00223931 /* CustomImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,10 @@
 		F6EAC9302A988D5B00223931 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		F6EAC9322A988D7800223931 /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
 		F6EAC9342A98AAF600223931 /* AdvertisementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementCell.swift; sourceTree = "<group>"; };
+		F6EAC9362A99DF0600223931 /* AdvertismentCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertismentCellModel.swift; sourceTree = "<group>"; };
+		F6EAC9382A99F12A00223931 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		F6EAC93B2A99FD9F00223931 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F6EAC93C2A99FE5F00223931 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 				F6EAC9272A988A9400223931 /* Modules */,
 				F6EAC92C2A988B2400223931 /* Resources */,
 				F6EAC9342A98AAF600223931 /* AdvertisementCell.swift */,
+				F6EAC9382A99F12A00223931 /* CustomImageView.swift */,
 			);
 			path = PracticalTestTask;
 			sourceTree = "<group>";
@@ -89,6 +96,7 @@
 				F6EAC9142A98655300223931 /* AdvertisementsViewController.swift */,
 				F6EAC9292A988AC000223931 /* AdvertisementsViewModel.swift */,
 				F6EAC9252A9889D700223931 /* AdvertisementModel.swift */,
+				F6EAC9362A99DF0600223931 /* AdvertismentCellModel.swift */,
 			);
 			path = Advertisements;
 			sourceTree = "<group>";
@@ -159,11 +167,12 @@
 			};
 			buildConfigurationList = F6EAC9082A98655300223931 /* Build configuration list for PBXProject "PracticalTestTask" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				ru,
+				en,
 			);
 			mainGroup = F6EAC9042A98655300223931;
 			productRefGroup = F6EAC90E2A98655300223931 /* Products */;
@@ -197,7 +206,9 @@
 				F6EAC9112A98655300223931 /* AppDelegate.swift in Sources */,
 				F6EAC9132A98655300223931 /* SceneDelegate.swift in Sources */,
 				F6EAC9332A988D7800223931 /* DetailsModel.swift in Sources */,
+				F6EAC9372A99DF0600223931 /* AdvertismentCellModel.swift in Sources */,
 				F6EAC9312A988D5B00223931 /* DetailsViewModel.swift in Sources */,
+				F6EAC9392A99F12A00223931 /* CustomImageView.swift in Sources */,
 				F6EAC9352A98AAF600223931 /* AdvertisementCell.swift in Sources */,
 				F6EAC9262A9889D700223931 /* AdvertisementModel.swift in Sources */,
 				F6EAC92F2A988D3500223931 /* DetailsViewController.swift in Sources */,
@@ -211,6 +222,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F6EAC91C2A98655300223931 /* Base */,
+				F6EAC93B2A99FD9F00223931 /* ru */,
+				F6EAC93C2A99FE5F00223931 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -222,6 +235,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -282,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -339,6 +354,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5374B32457;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PracticalTestTask/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -366,6 +382,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5374B32457;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PracticalTestTask/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

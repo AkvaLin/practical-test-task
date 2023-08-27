@@ -36,3 +36,7 @@ struct AdvertisementModel: Decodable {
         createdDate = try values.decodeIfPresent(String.self, forKey: .createdDate)
     }
 }
+
+struct AdvertisementsModel: Decodable {
+    let advertisements: [AdvertisementModel]
+}
