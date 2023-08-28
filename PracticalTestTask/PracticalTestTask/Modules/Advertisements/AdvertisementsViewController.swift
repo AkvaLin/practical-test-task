@@ -85,6 +85,8 @@ class AdvertisementsViewController: UIViewController {
     }
 }
 
+// MARK: CollectionViewDataSource
+
 extension AdvertisementsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.advertisementsData.count
@@ -105,11 +107,16 @@ extension AdvertisementsViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: CollectionViewDelegate
+
 extension AdvertisementsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
+        navigationController?.pushViewController(UIViewController(),
+                                                 animated: true)
     }
 }
+
+// MARK: CollectionViewDelegateFlowLayout
 
 extension AdvertisementsViewController: UICollectionViewDelegateFlowLayout {
     
