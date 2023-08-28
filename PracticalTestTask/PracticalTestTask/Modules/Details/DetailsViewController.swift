@@ -14,7 +14,7 @@ class DetailsViewController: UIViewController {
     init(id: String) {
         self.viewModel = DetailsViewModel(id: id)
         
-        super.init()
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {

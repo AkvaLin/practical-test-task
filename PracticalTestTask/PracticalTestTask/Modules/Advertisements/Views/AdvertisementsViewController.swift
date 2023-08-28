@@ -16,14 +16,15 @@ class AdvertisementsViewController: UIViewController {
         layout.scrollDirection = .vertical
         return layout
     }()
-    private let sectionInsets = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 20.0, right: 16.0)
-    private let minimumItemSpacing: CGFloat = 8
-    private let itemsPerRow: CGFloat = 2
     
     private let spinner = UIActivityIndicatorView(style: .large)
     
     private let viewModel = AdvertisementsViewModel()
     private var storage: Set<AnyCancellable> = []
+    
+    private let sectionInsets = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 20.0, right: 16.0)
+    private let minimumItemSpacing: CGFloat = 8
+    private let itemsPerRow: CGFloat = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
