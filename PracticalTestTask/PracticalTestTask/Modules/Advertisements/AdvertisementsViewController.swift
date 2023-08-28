@@ -111,7 +111,7 @@ extension AdvertisementsViewController: UICollectionViewDataSource {
 
 extension AdvertisementsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(UIViewController(),
+        navigationController?.pushViewController(DetailsViewController(id: viewModel.advertisementsData[indexPath.row].id),
                                                  animated: true)
     }
 }

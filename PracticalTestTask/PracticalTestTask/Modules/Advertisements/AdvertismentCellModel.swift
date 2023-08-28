@@ -8,6 +8,8 @@
 import Foundation
 
 struct AdvertisementCellModel {
+    
+    let id: String
     let imageURL: URL?
     let title: String
     let price: String
@@ -15,6 +17,7 @@ struct AdvertisementCellModel {
     let date: String
     
     init(from advertisementModel: AdvertisementModel) {
+        id = advertisementModel.id ?? ""
         imageURL = URL(string: advertisementModel.imageURL ?? "")
         title = advertisementModel.title ?? ""
         price = advertisementModel.price ?? ""
