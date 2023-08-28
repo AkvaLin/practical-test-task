@@ -76,10 +76,8 @@
 		F6EAC90F2A98655300223931 /* PracticalTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				F6EAC9342A98AAF600223931 /* AdvertisementCell.swift */,
 				F6EAC92B2A988AC900223931 /* Application */,
 				F6EAC9272A988A9400223931 /* Modules */,
-				F6EAC9382A99F12A00223931 /* CustomImageView.swift */,
 				F6EAC9442A9CEB5700223931 /* UI Elements */,
 				F6EAC9432A9CEAF600223931 /* Support */,
 				F6EAC92C2A988B2400223931 /* Resources */,
@@ -99,10 +97,9 @@
 		F6EAC9282A988A9A00223931 /* Advertisements */ = {
 			isa = PBXGroup;
 			children = (
-				F6EAC9292A988AC000223931 /* AdvertisementsViewModel.swift */,
-				F6EAC9142A98655300223931 /* AdvertisementsViewController.swift */,
-				F6EAC9252A9889D700223931 /* AdvertisementModel.swift */,
-				F6EAC9362A99DF0600223931 /* AdvertismentCellModel.swift */,
+				F6EAC9472A9CEFA400223931 /* Views */,
+				F6EAC9482A9CEFA900223931 /* ViewModels */,
+				F6EAC9492A9CEFAF00223931 /* Models */,
 			);
 			path = Advertisements;
 			sourceTree = "<group>";
@@ -148,8 +145,35 @@
 		F6EAC9442A9CEB5700223931 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				F6EAC9382A99F12A00223931 /* CustomImageView.swift */,
 			);
 			path = "UI Elements";
+			sourceTree = "<group>";
+		};
+		F6EAC9472A9CEFA400223931 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F6EAC9142A98655300223931 /* AdvertisementsViewController.swift */,
+				F6EAC9342A98AAF600223931 /* AdvertisementCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F6EAC9482A9CEFA900223931 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F6EAC9292A988AC000223931 /* AdvertisementsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F6EAC9492A9CEFAF00223931 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F6EAC9252A9889D700223931 /* AdvertisementModel.swift */,
+				F6EAC9362A99DF0600223931 /* AdvertismentCellModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
