@@ -10,7 +10,7 @@ import UIKit
 
 enum Alerts {
     static func getAlert(for error: NetworkService.FailureReason) -> UIAlertController {
-        var alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
         switch error {
         case .wrongURL:
             alert.title = "Ошибка"

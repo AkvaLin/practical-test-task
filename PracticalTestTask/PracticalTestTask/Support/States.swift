@@ -9,14 +9,13 @@ import Foundation
 
 enum States {
     enum LoadingStates: Equatable {
-        
         static func == (lhs: States.LoadingStates, rhs: States.LoadingStates) -> Bool {
             switch (lhs, rhs) {
             case (.idle, .idle):
                 return true
             case (.loading, .loading):
                 return true
-            case (.failed(let lhsType), .failed(let rhsType)):
+            case (.failed(_), .failed(_)):
                 return true
             case (.loaded, .loaded):
                 return true

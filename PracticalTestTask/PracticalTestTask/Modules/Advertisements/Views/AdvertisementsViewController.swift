@@ -74,24 +74,25 @@ class AdvertisementsViewController: UIViewController {
     private func binding() {
         viewModel.$state
             .sink { [weak self] state in
+                guard let strongSelf = self else { return }
                 switch state {
                 case .idle:
-                    self?.viewModel.fetchData()
+                    strongSelf.viewModel.fetchData()
                 case .loading:
-                    self?.setupSpinner()
+                    strongSelf.setupSpinner()
                 case .loaded:
-                    self?.collectionView.reloadData()
-                    self?.removeSpinner()
-                    self?.stopRefreshing()
+                    strongSelf.collectionView.reloadData()
+                    strongSelf.removeSpinner()
+                    strongSelf.stopRefreshing()
                 case .failed(let error):
-                    self?.stopRefreshing()
+                    strongSelf.stopRefreshing()
                     DispatchQueue.main.async {
                         let alert = Alerts.getAlert(for: error)
                         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel))
                         alert.addAction(UIAlertAction(title: "Обновить", style: .default, handler: { _ in
-                            self?.viewModel.fetchData()
+                            strongSelf.viewModel.fetchData()
                         }))
-                        self?.present(alert, animated: true)
+                        strongSelf.present(alert, animated: true)
                     }
                 }
             }
@@ -109,7 +110,7 @@ class AdvertisementsViewController: UIViewController {
     }
 }
 
-// MARK: CollectionViewDataSource
+// MARK: - CollectionViewDataSource
 
 extension AdvertisementsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -131,7 +132,7 @@ extension AdvertisementsViewController: UICollectionViewDataSource {
     }
 }
 
-// MARK: CollectionViewDelegate
+// MARK: - CollectionViewDelegate
 
 extension AdvertisementsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -140,7 +141,7 @@ extension AdvertisementsViewController: UICollectionViewDelegate {
     }
 }
 
-// MARK: CollectionViewDelegateFlowLayout
+// MARK: - CollectionViewDelegateFlowLayout
 
 extension AdvertisementsViewController: UICollectionViewDelegateFlowLayout {
     

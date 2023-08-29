@@ -97,25 +97,26 @@ class DetailsViewController: UIViewController {
     private func binding() {
         viewModel.$state
             .sink { [weak self] state in
+                guard let strongSelf = self else { return }
                 switch state {
                 case .idle:
-                    self?.viewModel.fetchData()
+                    strongSelf.viewModel.fetchData()
                 case .loading:
-                    self?.setupSpinner()
+                    strongSelf.setupSpinner()
                 case .loaded:
-                    self?.setupViews()
-                    self?.removeSpinner()
+                    strongSelf.setupViews()
+                    strongSelf.removeSpinner()
                 case .failed(let error):
                     DispatchQueue.main.async {
-                        self?.removeSpinner()
+                        strongSelf.removeSpinner()
                         let alert = Alerts.getAlert(for: error)
                         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { _ in
-                            self?.navigationController?.popViewController(animated: true)
+                            strongSelf.navigationController?.popViewController(animated: true)
                         }))
                         alert.addAction(UIAlertAction(title: "Обновить", style: .default, handler: { _ in
-                            self?.viewModel.fetchData()
+                            strongSelf.viewModel.fetchData()
                         }))
-                        self?.present(alert, animated: true)
+                        strongSelf.present(alert, animated: true)
                     }
                 }
             }
@@ -137,21 +138,23 @@ class DetailsViewController: UIViewController {
     }
 }
 
+// MARK: - UI Settings
+
 private extension DetailsViewController {
     
     func addSubviews() {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubview(imageView)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(priceLabel)
-        contentView.addSubview(locationLabel)
-        contentView.addSubview(mainDescriptionLabel)
-        contentView.addSubview(descriptionLabel)
-        contentView.addSubview(contactInfoLabel)
-        contentView.addSubview(emailLabel)
-        contentView.addSubview(phoneLabel)
-        contentView.addSubview(dateLabel)
+        contentView.addSubviews([imageView,
+                                 titleLabel,
+                                 priceLabel,
+                                 locationLabel,
+                                 mainDescriptionLabel,
+                                 descriptionLabel,
+                                 contactInfoLabel,
+                                 emailLabel,
+                                 phoneLabel,
+                                 dateLabel])
     }
     
     func setupConstraints() {

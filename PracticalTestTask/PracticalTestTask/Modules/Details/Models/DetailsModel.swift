@@ -26,6 +26,7 @@ struct DetailsModel {
         description = detailsDTO.description ?? ""
         email = detailsDTO.email ?? ""
         phoneNumber = detailsDTO.phoneNumber ?? ""
+        
         if let location = detailsDTO.location {
             if let address = detailsDTO.address {
                 self.location = location + ", " + address

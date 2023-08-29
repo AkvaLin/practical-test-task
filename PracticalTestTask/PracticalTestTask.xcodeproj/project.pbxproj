@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F678BF322A9EB6AF00F478E8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678BF312A9EB6AF00F478E8 /* Extensions.swift */; };
 		F69068B22A9D26FF00E86DEF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69068B12A9D26FF00E86DEF /* NetworkService.swift */; };
 		F69068B42A9DE04500E86DEF /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69068B32A9DE04500E86DEF /* Alerts.swift */; };
 		F6EAC9112A98655300223931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAC9102A98655300223931 /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F678BF312A9EB6AF00F478E8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F69068B12A9D26FF00E86DEF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F69068B32A9DE04500E86DEF /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		F6EAC90D2A98655300223931 /* PracticalTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticalTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +176,7 @@
 				F6EAC94C2A9CF85B00223931 /* FormatDate.swift */,
 				F69068B12A9D26FF00E86DEF /* NetworkService.swift */,
 				F69068B32A9DE04500E86DEF /* Alerts.swift */,
+				F678BF312A9EB6AF00F478E8 /* Extensions.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6EAC9152A98655300223931 /* AdvertisementsViewController.swift in Sources */,
+				F678BF322A9EB6AF00F478E8 /* Extensions.swift in Sources */,
 				F6EAC92A2A988AC000223931 /* AdvertisementsViewModel.swift in Sources */,
 				F6EAC9112A98655300223931 /* AppDelegate.swift in Sources */,
 				F6EAC9132A98655300223931 /* SceneDelegate.swift in Sources */,

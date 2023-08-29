@@ -19,10 +19,12 @@ enum NetworkService {
     static func request<SomeDecodable: Decodable>(_ someDecodable: SomeDecodable.Type, url: URL) -> AnyPublisher<SomeDecodable, FailureReason> {
         return URLSession.shared.dataTaskPublisher(for: url)
             .tryMap { element -> Data in
-               guard let httpResponse = element.response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                  throw URLError(.badServerResponse)
-               }
-               return element.data
+                guard let httpResponse = element.response as? HTTPURLResponse,
+                      httpResponse.statusCode == 200
+                else {
+                    throw URLError(.badServerResponse)
+                }
+                return element.data
             }
             .decode(type: SomeDecodable.self, decoder: JSONDecoder())
             .mapError({ error in
