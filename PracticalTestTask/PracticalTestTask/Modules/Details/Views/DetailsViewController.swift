@@ -89,7 +89,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemBackground
         binding()
     }
@@ -110,12 +110,19 @@ class DetailsViewController: UIViewController {
                     DispatchQueue.main.async {
                         strongSelf.removeSpinner()
                         let alert = Alerts.getAlert(for: error)
-                        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { _ in
+                        
+                        alert.addAction(UIAlertAction(title: "Отмена",
+                                                      style: .cancel,
+                                                      handler: { _ in
                             strongSelf.navigationController?.popViewController(animated: true)
                         }))
-                        alert.addAction(UIAlertAction(title: "Обновить", style: .default, handler: { _ in
+                        
+                        alert.addAction(UIAlertAction(title: "Обновить",
+                                                      style: .default,
+                                                      handler: { _ in
                             strongSelf.viewModel.fetchData()
                         }))
+                        
                         strongSelf.present(alert, animated: true)
                     }
                 }

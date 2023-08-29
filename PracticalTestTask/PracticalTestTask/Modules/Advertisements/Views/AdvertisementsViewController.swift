@@ -31,8 +31,6 @@ class AdvertisementsViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         setupCollectionView()
-        viewModel.fetchData()
-        setupSpinner()
         binding()
     }
     
@@ -88,10 +86,16 @@ class AdvertisementsViewController: UIViewController {
                     strongSelf.stopRefreshing()
                     DispatchQueue.main.async {
                         let alert = Alerts.getAlert(for: error)
-                        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel))
-                        alert.addAction(UIAlertAction(title: "Обновить", style: .default, handler: { _ in
+                        
+                        alert.addAction(UIAlertAction(title: "Отмена",
+                                                      style: .cancel))
+                        
+                        alert.addAction(UIAlertAction(title: "Обновить",
+                                                      style: .default,
+                                                      handler: { _ in
                             strongSelf.viewModel.fetchData()
                         }))
+                        
                         strongSelf.present(alert, animated: true)
                     }
                 }
@@ -119,9 +123,11 @@ extension AdvertisementsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdvertisementCell.reuseID,
-                                                            for: indexPath) as? AdvertisementCell else {
+                                                            for: indexPath) as? AdvertisementCell
+        else {
             return UICollectionViewCell()
         }
+        
         let item = viewModel.advertisementsData[indexPath.row]
         cell.configure(imageURL: item.imageURL,
                        title: item.title,
