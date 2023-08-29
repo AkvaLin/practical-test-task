@@ -13,7 +13,7 @@ class AdvertisementCell: UICollectionViewCell {
     
     private let imageView: CustomImageView = {
         let view = CustomImageView()
-        view.contentMode = .scaleAspectFit
+        view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 16
         return view
@@ -26,7 +26,7 @@ class AdvertisementCell: UICollectionViewCell {
     }()
     private let priceLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 24, weight: .heavy)
+        lbl.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return lbl
     }()
     private let locationLabel: UILabel = {

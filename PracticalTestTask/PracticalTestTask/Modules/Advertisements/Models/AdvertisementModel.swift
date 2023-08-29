@@ -39,4 +39,17 @@ struct AdvertisementModel: Decodable {
 
 struct AdvertisementsModel: Decodable {
     let advertisements: [AdvertisementModel]
+    
+    enum CodingKeys: CodingKey {
+        case advertisements
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.advertisements = try container.decode([AdvertisementModel].self, forKey: .advertisements)
+    }
+    
+    init() {
+        advertisements = []
+    }
 }

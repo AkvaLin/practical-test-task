@@ -16,23 +16,23 @@ class AdvertisementsViewModel {
     
     public func fetchData() {
         state = .loading
-        
+
         guard let url = URL(string: Constants.stringURLs.getMainPageURL()) else {
-            state = .failed
+            state = .failed(.wrongURL)
             return
         }
         
-        URLSession.shared.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: AdvertisementsModel.self, decoder: JSONDecoder())
-            .replaceError(with: AdvertisementsModel(advertisements: []))
+        NetworkService.request(AdvertisementsModel.self, url: url)
             .map { $0.advertisements }
-            .tryMap { model -> [AdvertisementCellModel] in
+            .map { model -> [AdvertisementCellModel] in
                 model.map {
                     AdvertisementCellModel(from: $0)
                 }
             }
-            .replaceError(with: [])
+            .catch { error in
+                self.state = .failed(error)
+                return Just([AdvertisementCellModel]())
+            }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] model in
                 self?.advertisementsData = model

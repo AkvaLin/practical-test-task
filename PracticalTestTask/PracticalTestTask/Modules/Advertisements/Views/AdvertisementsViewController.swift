@@ -43,6 +43,10 @@ class AdvertisementsViewController: UIViewController {
         collectionView.register(AdvertisementCell.self, forCellWithReuseIdentifier: AdvertisementCell.reuseID)
         collectionView.backgroundColor = .clear
         
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
+        
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -78,11 +82,30 @@ class AdvertisementsViewController: UIViewController {
                 case .loaded:
                     self?.collectionView.reloadData()
                     self?.removeSpinner()
-                case .failed:
-                    break
+                    self?.stopRefreshing()
+                case .failed(let error):
+                    self?.stopRefreshing()
+                    DispatchQueue.main.async {
+                        let alert = Alerts.getAlert(for: error)
+                        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel))
+                        alert.addAction(UIAlertAction(title: "Обновить", style: .default, handler: { _ in
+                            self?.viewModel.fetchData()
+                        }))
+                        self?.present(alert, animated: true)
+                    }
                 }
             }
             .store(in: &storage)
+    }
+    
+    @objc private func refresh() {
+        viewModel.fetchData()
+    }
+    
+    private func stopRefreshing() {
+        DispatchQueue.main.async {
+            self.collectionView.refreshControl?.endRefreshing()
+        }
     }
 }
 

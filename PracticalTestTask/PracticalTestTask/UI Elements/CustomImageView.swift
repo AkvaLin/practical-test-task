@@ -11,8 +11,8 @@ let imageCache = NSCache<AnyObject, AnyObject>()
 
 class CustomImageView: UIImageView {
     
-    var task: URLSessionDataTask!
-    let spinner = UIActivityIndicatorView(style: .medium)
+    private var task: URLSessionDataTask!
+    private let spinner = UIActivityIndicatorView(style: .medium)
     
     func loadImage(from url: URL?) {
         

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DetailsModel: Decodable {
+struct DetailsDTO: Decodable {
     
     let id : String?
     let title : String?
@@ -46,5 +46,18 @@ struct DetailsModel: Decodable {
         email = try values.decodeIfPresent(String.self, forKey: .email)
         phoneNumber = try values.decodeIfPresent(String.self, forKey: .phoneNumber)
         address = try values.decodeIfPresent(String.self, forKey: .address)
+    }
+    
+    init() {
+        id = nil
+        title = nil
+        price = nil
+        location = nil
+        imageURL = nil
+        createdDate = nil
+        description = nil
+        email = nil
+        phoneNumber = nil
+        address = nil
     }
 }

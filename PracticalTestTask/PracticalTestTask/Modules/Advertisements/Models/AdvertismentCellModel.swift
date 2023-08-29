@@ -22,14 +22,6 @@ struct AdvertisementCellModel {
         title = advertisementModel.title ?? ""
         price = advertisementModel.price ?? ""
         location = advertisementModel.location ?? ""
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        if let newDate = formatter.date(from: advertisementModel.createdDate ?? "") {
-            formatter.dateStyle = .medium
-            formatter.locale = .current
-            date = formatter.string(from: newDate)
-        } else {
-            date = ""
-        }
+        date = FormatDate.getFormatedDateString(dateString: advertisementModel.createdDate)
     }
 }
