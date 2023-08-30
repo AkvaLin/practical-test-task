@@ -11,14 +11,17 @@ import Combine
 class DetailsViewController: UIViewController {
     
     private let spinner = UIActivityIndicatorView(style: .large)
+    
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         return view
     }()
+    
     private lazy var contentView: UIView = {
         let view = UIView()
         return view
     }()
+    
     private lazy var imageView: CustomImageView = {
         let view = CustomImageView()
         view.contentMode = .scaleAspectFill
@@ -26,48 +29,57 @@ class DetailsViewController: UIViewController {
         view.layer.cornerRadius = 16
         return view
     }()
+    
     private lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 22)
         return lbl
     }()
+    
     private lazy var priceLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         return lbl
     }()
+    
     private lazy var locationLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 16)
         return lbl
     }()
+    
     private lazy var dateLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 12, weight: .ultraLight)
         return lbl
     }()
+    
     private lazy var mainDescriptionLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Описание"
         lbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         return lbl
     }()
+    
     private lazy var descriptionLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
         return lbl
     }()
+    
     private lazy var contactInfoLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Контактная информация"
         lbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         return lbl
     }()
+    
     private lazy var emailLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.monospacedSystemFont(ofSize: 16, weight: .regular)
         return lbl
     }()
+    
     private lazy var phoneLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.monospacedSystemFont(ofSize: 16, weight: .regular)

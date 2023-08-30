@@ -37,6 +37,7 @@ class CustomImageView: UIImageView {
             guard let data = data,
                   let newImage = UIImage(data: data)
             else {
+                self.removeSpinner()
                 return
             }
             
