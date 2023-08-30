@@ -242,6 +242,7 @@ private extension DetailsViewController {
             phoneLabel.trailingAnchor.constraint(equalTo: emailLabel.trailingAnchor),
             
             dateLabel.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 16),
+            dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
             dateLabel.leadingAnchor.constraint(equalTo: phoneLabel.leadingAnchor),
             dateLabel.trailingAnchor.constraint(equalTo: phoneLabel.trailingAnchor)
         ])
