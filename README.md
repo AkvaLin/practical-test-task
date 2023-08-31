@@ -14,7 +14,7 @@
 ### Dark Theme
 | Main View | Details View |
 | :-------------: |:-------------:|
-| <img src="https://i.ibb.co/GW1bcnB/Simulator-Screenshot-i-Phone-14-Pro-2023-08-31-at-11-39-35.png" width="250"> | <img src="https://i.ibb.co/x3ZynbW/Simulator-Screenshot-i-Phone-14-Pro-2023-08-31-at-11-39-40.png" width="250"> |
+| <img src="https://i.ibb.co/GW1bcnB/Simulator-Screenshot-i-Phone-14-Pro-2023-08-31-at-11-39-35.png" width="250"> | <img src="https://i.ibb.co/tb7JSCn/Simulator-Screenshot-i-Phone-14-Pro-2023-08-31-at-11-39-40.png" width="250"> |
 
 ## Requirements
 
