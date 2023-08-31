@@ -1,5 +1,10 @@
 # practical-test-task
 
+<p align="center">
+   <img src="https://img.shields.io/badge/iOS-14.0-blue">
+   <img src="https://img.shields.io/badge/Version-v1.0-green">
+</p>
+
 ## About
 
 Приложение, состоящее из двух экранов и отображающее список товаров и детальную информацию по каждому товару
