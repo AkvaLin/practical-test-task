@@ -64,6 +64,8 @@ class CustomImageView: UIImageView {
     }
     
     private func removeSpinner() {
-        spinner.removeFromSuperview()
+        DispatchQueue.main.async {
+            self.spinner.removeFromSuperview()
+        }
     }
 }
